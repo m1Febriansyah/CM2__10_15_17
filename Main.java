@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        TransaksiLayanan transaksi = new TransaksiLayanan();
         Scanner scanner = new Scanner(System.in);
         QueueKlinik antrian = new QueueKlinik(10);
+        QueueTransaksi riwayat = new QueueTransaksi(20);
 
         while (true) {
             System.out.println("\n=== SISTEM ANTRIAN KLINIK ===");
@@ -32,12 +32,31 @@ public class Main {
                     antrian.print();
                     break;
                 case 3:
-                    antrian.Dequeue();
+                    Pasien dilayani = antrian.Dequeue();
+                    if (dilayani != null) {
+                        System.out.println("Pasien " + dilayani.nama + " dipanggil");
+                        System.out.print("ID Dokter: ");
+                        String idDokter = scanner.nextLine();
+                        System.out.print("Nama Dokter: ");
+                        String namaDokter = scanner.nextLine();
+                        Dokter dokter = new Dokter(idDokter, namaDokter);
+
+                        System.out.print("Durasi layanan (jam): ");
+                        int durasi = scanner.nextInt();
+                        scanner.nextLine();
+
+                        TransaksiLayanan t = new TransaksiLayanan(dilayani, dokter, durasi);
+                        riwayat.enqueue(t);
+
+                        System.out.println(">> Transaksi layanan berhasil dicatat:");
+                        // t.tampilkanTransaksi();
+                    }
                     break;
                 case 4:
                     System.out.println(">> Sisa pasien dalam antrian: " + antrian.getSize());
                     break;
                 case 5:
+                    riwayat.print();
                     break;
                 default:
                     System.out.println("Pilihan tidak valid.");
