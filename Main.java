@@ -30,8 +30,6 @@ public class Main {
                     antrian.Enqueue(psn);
                     break;
                 case 2:
-                    System.out.println("-- Antrian Pasien --");
-                    System.out.println("Antrian Pasien: ");
                     antrian.print();
                     break;
                 case 3:

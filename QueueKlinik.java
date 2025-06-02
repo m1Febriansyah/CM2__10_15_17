@@ -45,7 +45,8 @@ public class QueueKlinik {
             System.out.println("Antrian kosong.");
             return;
         }
-        System.out.println("Daftar Mahasiswa yang sedang mengantri:");
+        System.out.println("-- Antrian Pasien --");
+        System.out.println("Antrian Pasien: ");
         Node temp=front;
         while (temp!=null) {
             temp.data.tampilkanInformasi();
