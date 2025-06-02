@@ -8,16 +8,16 @@ public class QueueKlinik {
         size=0;
     }
     public boolean isEmpty() {
-        return head == null;
+        return head==null;
     }
     public void enqueue(int nomor, String nama) {
-        Node newNode = new Node(null, nomor, nama, null);
+        Node newNode=new Node(null, nomor, nama, null);
         if (isEmpty()) {
-            head = tail = newNode;
+            head=tail=newNode;
         } else {
-            tail.next = newNode;
-            newNode.prev = tail;
-            tail = newNode;
+            tail.next=newNode;
+            newNode.prev=tail;
+            tail=newNode;
         }
         size++;
     }
@@ -26,19 +26,19 @@ public class QueueKlinik {
             System.out.println("Antrian kosong!");
         } else {
             System.out.println(">> Pasien telah dilayani, transaksi berhasil dicatat.");
-            head = head.next;
+            head=head.next;
             if (head != null) {
-                head.prev = null;
+                head.prev=null;
             } else {
-                tail = null;
+                tail=null;
             }
             size--;
         }
     }
     public void print() {
-        Node current = head;
+        Node current=head;
         while (current != null) {
-            current = current.next;
+            current=current.next;
         }
         System.out.println("Sisa pasien dalam antrian: " + size);
     }
