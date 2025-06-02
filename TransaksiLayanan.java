@@ -4,5 +4,4 @@ public class TransaksiLayanan {
     int durasiLayanan;
     int biaya;
 
-    
 }
