@@ -48,8 +48,7 @@ public class Main {
                         TransaksiLayanan t = new TransaksiLayanan(dilayani, dokter, durasi);
                         riwayat.enqueue(t);
 
-                        System.out.println(">> Transaksi layanan berhasil dicatat:");
-                        // t.tampilkanTransaksi();
+                        System.out.println(">> Pasien telah dilayani, transaksi berhasil dicatat.");
                     }
                     break;
                 case 4:
