@@ -1,12 +1,9 @@
 public class Node {
-    int nomor;
-    String nama;
-    Node prev, next;
+    Pasien data;
+    Node next;
 
-    Node(Node prev, int nomor, String nama, Node next) {
-        this.prev = prev;
-        this.nomor = nomor;
-        this.nama = nama;
-        this.next = next;
+    public Node(Pasien data, Node next) {
+        this.data=data;
+        this.next=next;
     }
 }
