@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         TransaksiLayanan transaksi = new TransaksiLayanan();
         Scanner scanner = new Scanner(System.in);
-
+        
         while (true) {
             System.out.println("\n=== SISTEM ANTRIAN KLINIK ===");
             System.out.println("1. Tambah Pasien ke Antrian");
@@ -28,6 +28,9 @@ public class Main {
                     transaksi.tambahAntrian(new Pasien(nama, nik, keluhan));
                     break;
                 case 2:
+                    System.out.println("-- Antrian Pasien --");
+                    System.out.println("Antrian Pasien: ");
+                    
                     break;
                 case 3:
                     break;
