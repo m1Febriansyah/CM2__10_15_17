@@ -4,7 +4,8 @@ public class Main {
     public static void main(String[] args) {
         TransaksiLayanan transaksi = new TransaksiLayanan();
         Scanner scanner = new Scanner(System.in);
-        
+        QueueKlinik antrian=new QueueKlinik(10);
+
         while (true) {
             System.out.println("\n=== SISTEM ANTRIAN KLINIK ===");
             System.out.println("1. Tambah Pasien ke Antrian");
@@ -25,30 +26,22 @@ public class Main {
                     String nik = scanner.nextLine();
                     System.out.print("Keluhan: ");
                     String keluhan = scanner.nextLine();
-                    transaksi.tambahAntrian(new Pasien(nama, nik, keluhan));
+                    transaksi.psn(new Pasien(nama, nik, keluhan));
+                    antrian.Enqueue(psn);
                     break;
                 case 2:
                     System.out.println("-- Antrian Pasien --");
                     System.out.println("Antrian Pasien: ");
-                    
+                    antrian.print();
                     break;
                 case 3:
+                    antrian.Dequeue();
                     break;
                 case 4:
+                    System.out.println(">> Sisa pasien dalam antrian: "+antrian.getSize());
                     break;
                 case 5:
                     break;
-                case 6:
-                    break;
-                case 7:
-
-                    break;
-                case 8:
-                    break;
-                case 0:
-
-                    break;
-
                 default:
                     System.out.println("Pilihan tidak valid.");
                     break;
